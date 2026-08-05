@@ -16,8 +16,8 @@
     --ink-soft: #4a4f5a;
     --ink-faint: #868c98;
     --line: #e6e8ec;
-    --accent: #2f5bea;
-    --accent-soft: #eaf0ff;
+    --accent: #1A4D5C;
+    --accent-soft: #e3eef1;
     --radius: 16px;
     --maxw: 1080px;
   }
@@ -67,19 +67,19 @@
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn { font-size: 0.95rem; font-weight: 600; padding: 12px 24px; border-radius: 999px; transition: all .2s; display: inline-block; }
   .btn-primary { background: var(--accent); color: #fff; }
-  .btn-primary:hover { background: #1d44c9; transform: translateY(-1px); }
+  .btn-primary:hover { background: #123842; transform: translateY(-1px); }
   .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
   .btn-ghost:hover { border-color: var(--ink); }
   .avatar {
     width: 100%; aspect-ratio: 1; border-radius: 24px;
-    background: linear-gradient(150deg, #dfe7ff 0%, #f6f7f9 60%);
+    background: linear-gradient(150deg, #d3e5ea 0%, #f6f7f9 60%);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Fraunces', serif; font-size: 5rem; color: var(--accent);
     border: 1px solid var(--line); position: relative; overflow: hidden;
   }
   .avatar::after {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 70% 20%, rgba(47,91,234,0.12), transparent 55%);
+    background: radial-gradient(circle at 70% 20%, rgba(26,77,92,0.16), transparent 55%);
   }
   .hero-stats { display: flex; gap: 40px; margin-top: 46px; padding-top: 34px; border-top: 1px solid var(--line); }
   .stat .num { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--ink); }
@@ -130,7 +130,7 @@
   .skill-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
   .skill-card h3 { font-size: 1.15rem; margin-bottom: 16px; }
   .chips { display: flex; flex-wrap: wrap; gap: 9px; }
-  .chip { font-size: 0.85rem; font-weight: 500; padding: 7px 14px; border-radius: 999px; background: var(--accent-soft); color: #274bc0; }
+  .chip { font-size: 0.85rem; font-weight: 500; padding: 7px 14px; border-radius: 999px; background: var(--accent-soft); color: #163f49; }
   @media (max-width: 800px) { .skill-grid { grid-template-columns: 1fr; } }
 
   /* SIDE PROJECT */
@@ -139,7 +139,7 @@
     color: #fff; border-radius: 22px; padding: 48px; display: grid;
     grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center;
   }
-  .project-card .eyebrow { color: #9db4ff; }
+  .project-card .eyebrow { color: #7fb3c1; }
   .project-card h3 { font-size: 1.8rem; color: #fff; margin-bottom: 14px; }
   .project-card p { color: #c3c8d4; margin-bottom: 22px; }
   .project-visual {
@@ -148,7 +148,7 @@
     font-family: 'Fraunces', serif; font-size: 3rem; color: rgba(255,255,255,0.4);
   }
   .project-card .btn-primary { background: #fff; color: var(--ink); }
-  .project-card .btn-primary:hover { background: #e8ecff; }
+  .project-card .btn-primary:hover { background: #dfeef1; }
   .placeholder-note { font-size: 0.82rem; color: #7f8699; margin-top: 14px; }
   @media (max-width: 720px) { .project-card { grid-template-columns: 1fr; padding: 32px; } }
 
