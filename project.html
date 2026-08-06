@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CrikeNight — A 0→1 Product Journey · Danielle Hanes</title>
+<meta name="description" content="CrikeNight — a dog-training app built to improve training efficiency and trial performance. Following the product from 0 to 1." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --ink: #16181d;
+    --ink-soft: #4a4f5a;
+    --ink-faint: #868c98;
+    --line: #e6e8ec;
+    --accent: #1A4D5C;
+    --accent-soft: #e3eef1;
+    --radius: 16px;
+    --maxw: 900px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink); background: var(--bg); line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+
+  /* NAV */
+  header.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; }
+  .logo span { color: var(--accent); }
+  .back { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); }
+  .back:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero { padding: 84px 0 48px; }
+  .hero .kicker { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(2.3rem, 5vw, 3.2rem); margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 60ch; }
+
+  /* AT A GLANCE */
+  .glance { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0 8px; }
+  .glance .box { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: var(--bg-alt); }
+  .glance .lbl { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .glance .val { font-size: 0.98rem; color: var(--ink); font-weight: 500; }
+  @media (max-width: 700px) { .glance { grid-template-columns: 1fr; } }
+
+  section.block { padding: 56px 0; }
+  section.block h2 { font-size: 1.9rem; margin-bottom: 14px; }
+  section.block p { color: var(--ink-soft); margin-bottom: 16px; font-size: 1.05rem; }
+  .alt { background: var(--bg-alt); }
+
+  /* JOURNEY */
+  .journey { position: relative; margin-top: 34px; padding-left: 30px; border-left: 2px solid var(--line); }
+  .stage { position: relative; padding: 0 0 44px 30px; }
+  .stage:last-child { padding-bottom: 0; }
+  .stage::before { content: ''; position: absolute; left: -41px; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid var(--line); }
+  .stage.done::before { background: var(--accent); border-color: var(--accent); }
+  .stage.active::before { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .stage .stnum { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+  .stage h3 { font-size: 1.35rem; margin: 4px 0 6px; }
+  .stage .status { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 11px; border-radius: 999px; margin-left: 10px; vertical-align: middle; }
+  .status.s-done { background: var(--accent-soft); color: var(--accent); }
+  .status.s-active { background: #fdf3e3; color: #9a6b12; }
+  .status.s-next { background: #eef0f3; color: var(--ink-faint); }
+  .stage p { color: var(--ink-soft); font-size: 1rem; margin-bottom: 10px; }
+  .stage ul { list-style: none; display: grid; gap: 8px; margin-top: 8px; }
+  .stage ul li { position: relative; padding-left: 20px; color: var(--ink-soft); font-size: 0.97rem; }
+  .stage ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* CTA */
+  .cta { text-align: center; padding: 72px 0; }
+  .cta h2 { font-size: 2rem; margin-bottom: 14px; }
+  .cta p { color: var(--ink-soft); max-width: 46ch; margin: 0 auto 26px; }
+  .btn { font-size: 0.95rem; font-weight: 600; padding: 12px 24px; border-radius: 999px; display: inline-block; transition: all .2s; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #123842; transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .cta-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .note { font-size: 0.9rem; color: var(--ink-faint); font-style: italic; border-left: 3px solid var(--accent-soft); padding-left: 16px; margin-top: 18px; }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer, footer a { font-size: 0.88rem; color: var(--ink-faint); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Danielle<span>.</span></a>
+    <a href="index.html" class="back">← Back to portfolio</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Side project · 0 → 1 in progress</span>
+    <h1>CrikeNight: building a dog-training app <em>from 0 to 1</em>.</h1>
+    <p class="lead">A personal passion project — a companion app for dog owners and handlers that makes everyday training more efficient and helps sharpen performance when it counts most: at competitive trials. This page is a living log of the build, from first spark to working product.</p>
+
+    <div class="glance">
+      <div class="box"><div class="lbl">What it is</div><div class="val">A training + trial-prep app for dog handlers</div></div>
+      <div class="box"><div class="lbl">My role</div><div class="val">Product, research, design & build</div></div>
+      <div class="box"><div class="lbl">Stage</div><div class="val">Discovery → early definition</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <h2>Why I'm building it</h2>
+    <p>Training a dog for competition is equal parts consistency, memory, and feedback — but most handlers track it in their heads, in scattered notes, or not at all. Progress is hard to see, plateaus are hard to diagnose, and the jump from the practice yard to the trial ring loses a lot in translation.</p>
+    <p>CrikeNight is my attempt to fix that: a simple, structured way to plan sessions, log reps, spot patterns, and walk into a trial prepared. It's also my own hands-on 0-to-1 playground — a chance to run the full product loop end-to-end, on something I genuinely care about.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>The 0 → 1 journey</h2>
+    <p>How the product is taking shape, stage by stage. I'll keep this updated as each phase moves forward.</p>
+
+    <div class="journey">
+
+      <div class="stage done">
+        <div class="stnum">STAGE 00</div>
+        <h3>The spark <span class="status s-done">Done</span></h3>
+        <p>The founding insight: handlers lack a single place to plan training, capture what actually happened, and carry that context into trials. Framed the core problem and the person I'm building for.</p>
+        <ul>
+          <li>Wrote a one-line problem statement and a "who is this for" sketch.</li>
+          <li>Captured my own training pain points as the first source of truth.</li>
+        </ul>
+      </div>
+
+      <div class="stage active">
+        <div class="stnum">STAGE 01</div>
+        <h3>Problem discovery <span class="status s-active">In progress</span></h3>
+        <p>Talking to other handlers and trainers to pressure-test the problem before building anything. Separating what would be nice from what's genuinely painful.</p>
+        <ul>
+          <li>Informal interviews with handlers across experience levels.</li>
+          <li>Mapping the current training-to-trial workflow and where it breaks.</li>
+          <li>Collecting the language people actually use, to shape the product's voice.</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 02</div>
+        <h3>Defining the vision <span class="status s-next">Up next</span></h3>
+        <p>Turning discovery into a sharp point of view: the one job the first version must do well, the metrics that signal it's working, and everything intentionally left out.</p>
+        <ul>
+          <li>Product principles and a tightly scoped v1 definition.</li>
+          <li>Success metrics for training consistency and trial readiness.</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 03</div>
+        <h3>First prototype (MVP) <span class="status s-next">Up next</span></h3>
+        <p>The smallest thing that delivers real value: plan a session, log reps, and see progress over time. Built to be used, not just demoed.</p>
+        <ul>
+          <li>Core flows: session planner, rep log, progress view.</li>
+          <li>Clickable prototype, then a working build I can use daily.</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 04</div>
+        <h3>Testing at trials <span class="status s-next">Up next</span></h3>
+        <p>The real exam: does using CrikeNight in the weeks before a trial change how prepared a handler feels — and how they perform on the day?</p>
+        <ul>
+          <li>Run the full loop on my own trial prep.</li>
+          <li>Put it in the hands of a few trusted handlers for honest feedback.</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 05</div>
+        <h3>Iterate &amp; grow <span class="status s-next">Up next</span></h3>
+        <p>Fold what I learn back into the product, sharpen the experience, and decide what earns a place in the roadmap next.</p>
+        <ul>
+          <li>Prioritize improvements by real usage, not assumptions.</li>
+          <li>Shape a lightweight roadmap for the next set of bets.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="note">This is an evolving log — I'll update each stage as the work moves from "up next" to "in progress" to "done."</p>
+  </div>
+</section>
+
+<section class="cta alt">
+  <div class="wrap">
+    <p class="eyebrow">Let's talk</p>
+    <h2>Curious about how I work?</h2>
+    <p>This project is a window into how I approach product from nothing — the same instincts I bring to teams. Happy to walk through it.</p>
+    <div class="cta-links">
+      <a href="index.html" class="btn btn-ghost">← Back to portfolio</a>
+      <a href="mailto:hanes.danielle@gmail.com" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 Danielle Hanes · Falls Church, VA</div>
+    <div><a href="mailto:hanes.danielle@gmail.com">hanes.danielle@gmail.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

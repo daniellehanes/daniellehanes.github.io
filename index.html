@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Danielle Hanes — Product Leader</title>
-<meta name="description" content="Danielle Hanes — Product Leader with 8+ years driving digital transformation, personalization, and customer experience across retail and consumer industries." />
+<meta name="description" content="Danielle Hanes — Product Leader with 8+ years driving digital transformation, personalization, and user experience across retail and consumer industries." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -124,6 +124,11 @@
   .tl-item h3 { font-size: 1.2rem; margin: 4px 0 2px; }
   .tl-item .co { font-size: 0.92rem; color: var(--ink-faint); font-weight: 500; margin-bottom: 8px; }
   .tl-item p { color: var(--ink-soft); font-size: 0.98rem; }
+  .tl-item.parent::before { background: var(--accent); border-color: var(--accent); }
+  .tl-sublabel { margin: -10px 0 26px 26px; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+  .tl-item.engagement { padding-left: 26px; }
+  .tl-item.engagement::before { width: 11px; height: 11px; left: -33px; top: 6px; background: #fff; border: 2px solid var(--accent); }
+  .client-badge { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 9px; }
 
   /* SKILLS */
   .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -186,8 +191,8 @@
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">Product Leader · Digital Transformation</p>
-      <h1>I turn customer insight into <em>products that ship</em> and scale.</h1>
-      <p class="lead">Senior Product Leader with 8+ years driving personalization, customer experience, and platform modernization across retail and consumer industries.</p>
+      <h1>I turn user insight into <em>products that ship</em> and scale.</h1>
+      <p class="lead">Senior Product Leader with 8+ years driving personalization, user experience, and platform modernization across retail and consumer industries.</p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">View case studies</a>
         <a href="Danielle-Hanes-Resume.pdf" class="btn btn-ghost">Download resume</a>
@@ -206,11 +211,11 @@
   <div class="wrap about-grid">
     <div>
       <p class="eyebrow">About</p>
-      <h2>Product strategy, grounded in the customer.</h2>
+      <h2>Product strategy, grounded in the user.</h2>
     </div>
     <div>
-      <p>I'm a Product Leader at IBM's Digital Product Engineering practice, where I've spent 8+ years helping retail, luxury, consumer products, and automotive clients define product vision, own roadmaps, and lead cross-functional teams from discovery through launch and optimization.</p>
-      <p>My work sits at the intersection of customer insight, analytics, and business strategy. I'm happiest translating messy, real-world problems into scalable digital experiences that measurably improve engagement, efficiency, and outcomes — partnering closely with engineering, UX, and business stakeholders along the way.</p>
+      <p>I'm a Product Leader at IBM's Digital Product Engineering practice, where I've spent 8+ years defining product vision, owning roadmaps, and leading cross-functional teams from discovery through launch and optimization. I've worked across many industries, specializing in retail, consumer products, and travel and transportation.</p>
+      <p>My work sits at the intersection of user insight, analytics, and business strategy. I'm happiest translating messy, real-world problems into scalable digital experiences that measurably improve engagement, efficiency, and outcomes — partnering closely with engineering, UX, and business stakeholders along the way.</p>
       <p>Based in Falls Church, Virginia. Currently exploring my next product leadership role.</p>
     </div>
   </div>
@@ -248,7 +253,7 @@
         <div>
           <span class="tag">Platform Modernization</span>
           <h3>Point-of-Service Transformation</h3>
-          <p class="client">Automotive Retailer · 2022–2026</p>
+          <p class="client">Automotive Retailer · 2022–2024</p>
         </div>
         <div>
           <ul>
@@ -289,34 +294,41 @@
       <h2>Experience</h2>
     </div>
     <div class="timeline">
-      <div class="tl-item">
+      <div class="tl-item parent">
         <div class="date">Oct 2017 — Present</div>
         <h3>Senior Managing Consultant, Digital Product Engineering</h3>
         <div class="co">IBM · United States</div>
-        <p>Lead product strategy and roadmap development across 10+ digital transformation initiatives spanning retail, luxury retail, consumer products, and automotive — partnering with executive stakeholders to define product vision and translate business objectives into scalable digital solutions.</p>
+        <p>Lead product strategy and roadmap development across 10+ digital transformation initiatives spanning retail, consumer products, travel &amp; transportation, and more — partnering with executive stakeholders to define product vision and translate business objectives into scalable digital solutions.</p>
       </div>
-      <div class="tl-item">
+
+      <div class="tl-sublabel">Selected client engagements delivered through IBM</div>
+
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
         <div class="date">Sep 2025 — Apr 2026</div>
-        <h3>Product Owner, Personalization & Digital Experience</h3>
-        <div class="co">IBM · Client: Global Beauty Retailer</div>
+        <h3>Product Owner, Personalization &amp; Digital Experience</h3>
+        <div class="co">Global Beauty Retailer</div>
         <p>Owned the personalization roadmap for millions of customer interactions; led the migration to Adobe Target and defined success metrics for engagement and adoption.</p>
       </div>
-      <div class="tl-item">
-        <div class="date">Aug 2022 — Feb 2026</div>
-        <h3>Product Owner, Point-of-Service</h3>
-        <div class="co">IBM · Client: Automotive Retailer</div>
-        <p>Owned strategy and roadmap for a customer and vehicle management platform across 1,000+ locations, improving employee efficiency by more than 30%.</p>
-      </div>
-      <div class="tl-item">
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
         <div class="date">Feb 2025 — Mar 2025</div>
         <h3>UX Researcher / Product Strategy Consultant</h3>
-        <div class="co">IBM · Client: Global Luxury Retailer</div>
+        <div class="co">Global Luxury Retailer</div>
         <p>Ran stakeholder interviews and discovery workshops, synthesizing insights into future-state experience strategies presented to client leadership.</p>
       </div>
-      <div class="tl-item">
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
+        <div class="date">Aug 2022 — Oct 2024</div>
+        <h3>Product Owner, Point-of-Service</h3>
+        <div class="co">Automotive Retailer</div>
+        <p>Owned strategy and roadmap for a customer and vehicle management platform across 1,000+ locations, improving employee efficiency by more than 30%.</p>
+      </div>
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
         <div class="date">2020 — 2021</div>
-        <h3>Business Analyst · Design Thinking Lead (earlier engagements)</h3>
-        <div class="co">IBM · Healthcare, Grocery Retail & Technology clients</div>
+        <h3>Business Analyst · Design Thinking Lead</h3>
+        <div class="co">Healthcare, Grocery Retail &amp; Technology clients</div>
         <p>Delivered B2B portal transformation, customer loyalty go-lives, and facilitated 25+ client workshops defining global talent acquisition processes.</p>
       </div>
     </div>
@@ -371,13 +383,12 @@
   <div class="wrap">
     <div class="project-card">
       <div>
-        <p class="eyebrow">Side project</p>
+        <p class="eyebrow">Side project · In progress</p>
         <h3>CrikeNight</h3>
-        <p>A personal project I'm building on the side. Swap this copy for a short description of what it is, the problem it solves, your role, and what you learned. Add a link to a live demo, prototype, or write-up.</p>
-        <a href="#" class="btn btn-primary">View project →</a>
-        <p class="placeholder-note">Placeholder — tell me about CrikeNight and I'll fill this in properly (or turn it into its own dedicated page).</p>
+        <p>A dog-training app I'm building out of personal passion — designed to make everyday training more efficient and to sharpen performance at competitive trials. It's a hands-on 0-to-1 build, and I'm documenting the journey from first spark to working product as it takes shape.</p>
+        <a href="project.html" class="btn btn-primary">View project →</a>
       </div>
-      <div class="project-visual">✦</div>
+      <div class="project-visual">0 → 1</div>
     </div>
   </div>
 </section>
