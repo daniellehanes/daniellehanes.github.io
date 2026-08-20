@@ -385,6 +385,424 @@
     <div class="project-card">
       <div>
         <p class="eyebrow">Side project · In progress</p>
+        <h3>Side Project</h3>
+        <p>A dog-training app I'm building out of personal passion — designed to make everyday training more efficient and to sharpen performance at competitive trials. It's a hands-on 0-to-1 build, and I'm documenting the journey from first spark to working product as it takes shape.</p>
+        <a href="project.html" class="btn btn-primary">View project →</a>
+      </div>
+      <div class="project-visual">0 → 1</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's build something great together.</h2>
+    <p>I'm open to product leadership opportunities in retail, consumer, and digital-first organizations. The fastest way to reach me is email.</p>
+    <div class="contact-links">
+      <a href="mailto:hanes.danielle@gmail.com" class="btn btn-primary">hanes.danielle@gmail.com</a>
+      <a href="https://www.linkedin.com/in/daniellehanes" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="Danielle-Hanes-Resume.pdf" class="btn btn-ghost">Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 Danielle Hanes · Falls Church, VA</div>
+    <div><a href="mailto:hanes.danielle@gmail.com">hanes.danielle@gmail.com</a> · <a href="tel:5713328346">571-332-8346</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<!-- build: 2026-08-06 refresh -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Danielle Hanes — Product Leader</title>
+<meta name="description" content="Danielle Hanes — Product Leader with 8+ years driving digital transformation, personalization, and user experience across retail and consumer industries." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --ink: #16181d;
+    --ink-soft: #4a4f5a;
+    --ink-faint: #868c98;
+    --line: #e6e8ec;
+    --accent: #1A4D5C;
+    --accent-soft: #e3eef1;
+    --radius: 16px;
+    --maxw: 1080px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  section { padding: 88px 0; }
+  .eyebrow {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+  }
+
+  /* NAV */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.82); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 600; }
+  .logo span { color: var(--accent); }
+  nav.links { display: flex; gap: 30px; }
+  nav.links a { font-size: 0.92rem; color: var(--ink-soft); font-weight: 500; transition: color .2s; }
+  nav.links a:hover { color: var(--accent); }
+  .nav-cta {
+    font-size: 0.9rem; font-weight: 600; padding: 9px 18px; border-radius: 999px;
+    background: var(--ink); color: #fff; transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+  @media (max-width: 720px) { nav.links { display: none; } }
+
+  /* HERO */
+  .hero { padding: 96px 0 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); margin-bottom: 22px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 40ch; margin-bottom: 30px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { font-size: 0.95rem; font-weight: 600; padding: 12px 24px; border-radius: 999px; transition: all .2s; display: inline-block; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #123842; transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .avatar {
+    width: 100%; aspect-ratio: 1; border-radius: 24px;
+    background: linear-gradient(150deg, #d3e5ea 0%, #f6f7f9 60%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 5rem; color: var(--accent);
+    border: 1px solid var(--line); position: relative; overflow: hidden;
+  }
+  .avatar::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 20%, rgba(26,77,92,0.16), transparent 55%);
+  }
+  .hero-stats { display: flex; gap: 40px; margin-top: 46px; padding-top: 34px; border-top: 1px solid var(--line); }
+  .stat .num { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--ink); }
+  .stat .lbl { font-size: 0.85rem; color: var(--ink-faint); }
+  @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; } .avatar { max-width: 260px; } }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; }
+  .about-grid p { color: var(--ink-soft); margin-bottom: 16px; font-size: 1.05rem; }
+  .about h2 { font-size: 2rem; }
+  @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; gap: 20px; } }
+
+  /* CASE STUDIES */
+  .alt { background: var(--bg-alt); }
+  .sec-head { max-width: 620px; margin-bottom: 48px; }
+  .sec-head h2 { font-size: 2.2rem; margin-bottom: 12px; }
+  .sec-head p { color: var(--ink-soft); }
+  .cases { display: grid; gap: 26px; }
+  .case {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 34px; display: grid; grid-template-columns: 1fr 2fr; gap: 32px;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .case:hover { box-shadow: 0 12px 40px rgba(20,24,35,0.08); transform: translateY(-2px); }
+  .case .tag { font-size: 0.78rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+  .case h3 { font-size: 1.45rem; margin: 8px 0 6px; }
+  .case .client { font-size: 0.92rem; color: var(--ink-faint); font-weight: 500; }
+  .case ul { list-style: none; display: grid; gap: 12px; }
+  .case ul li { position: relative; padding-left: 22px; color: var(--ink-soft); font-size: 0.98rem; }
+  .case ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .metrics { display: flex; gap: 28px; margin-top: 20px; flex-wrap: wrap; }
+  .metric .m-num { font-family: 'Fraunces', serif; font-size: 1.7rem; color: var(--ink); }
+  .metric .m-lbl { font-size: 0.8rem; color: var(--ink-faint); }
+  @media (max-width: 720px) { .case { grid-template-columns: 1fr; gap: 18px; padding: 26px; } }
+
+  /* TIMELINE */
+  .timeline { position: relative; margin-top: 20px; padding-left: 28px; border-left: 2px solid var(--line); }
+  .tl-item { position: relative; padding: 0 0 38px 26px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -35px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+  .tl-item .date { font-size: 0.82rem; color: var(--accent); font-weight: 600; letter-spacing: 0.03em; }
+  .tl-item h3 { font-size: 1.2rem; margin: 4px 0 2px; }
+  .tl-item .co { font-size: 0.92rem; color: var(--ink-faint); font-weight: 500; margin-bottom: 8px; }
+  .tl-item p { color: var(--ink-soft); font-size: 0.98rem; }
+  .tl-item.parent::before { background: var(--accent); border-color: var(--accent); }
+  .tl-sublabel { margin: -10px 0 26px 26px; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+  .tl-item.engagement { padding-left: 26px; }
+  .tl-item.engagement::before { width: 11px; height: 11px; left: -33px; top: 6px; background: #fff; border: 2px solid var(--accent); }
+  .client-badge { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 9px; }
+
+  /* SKILLS */
+  .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .skill-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .skill-card h3 { font-size: 1.15rem; margin-bottom: 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { font-size: 0.85rem; font-weight: 500; padding: 7px 14px; border-radius: 999px; background: var(--accent-soft); color: #163f49; }
+  @media (max-width: 800px) { .skill-grid { grid-template-columns: 1fr; } }
+
+  /* SIDE PROJECT */
+  .project-card {
+    background: linear-gradient(150deg, #1a1d26 0%, #23283a 100%);
+    color: #fff; border-radius: 22px; padding: 48px; display: grid;
+    grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center;
+  }
+  .project-card .eyebrow { color: #7fb3c1; }
+  .project-card h3 { font-size: 1.8rem; color: #fff; margin-bottom: 14px; }
+  .project-card p { color: #c3c8d4; margin-bottom: 22px; }
+  .project-visual {
+    aspect-ratio: 4/3; border-radius: 14px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 3rem; color: rgba(255,255,255,0.4);
+  }
+  .project-card .btn-primary { background: #fff; color: var(--ink); }
+  .project-card .btn-primary:hover { background: #dfeef1; }
+  .placeholder-note { font-size: 0.82rem; color: #7f8699; margin-top: 14px; }
+  @media (max-width: 720px) { .project-card { grid-template-columns: 1fr; padding: 32px; } }
+
+  /* CONTACT */
+  .contact { text-align: center; }
+  .contact h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 18px; }
+  .contact p { color: var(--ink-soft); max-width: 46ch; margin: 0 auto 32px; font-size: 1.08rem; }
+  .contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--line); padding: 32px 0; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer, footer a { font-size: 0.88rem; color: var(--ink-faint); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">Danielle<span>.</span></a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#work">Case Studies</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Side Project</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Product Leader · Digital Transformation</p>
+      <h1>I turn user insight into <em>products that ship</em> and scale.</h1>
+      <p class="lead">Senior Product Leader with 8+ years driving personalization, user experience, and platform modernization across retail and consumer industries.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">View case studies</a>
+        <a href="Danielle-Hanes-Resume.pdf" class="btn btn-ghost">Download resume</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">8+</div><div class="lbl">Years in product</div></div>
+        <div class="stat"><div class="num">10+</div><div class="lbl">Transformation initiatives</div></div>
+        <div class="stat"><div class="num">1,000+</div><div class="lbl">Retail locations supported</div></div>
+      </div>
+    </div>
+    <div class="avatar">DH</div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Product strategy, grounded in the user.</h2>
+    </div>
+    <div>
+      <p>I'm a Product Leader at IBM's Digital Product Engineering practice, where I've spent 8+ years defining product vision, owning roadmaps, and leading cross-functional teams from discovery through launch and optimization. I've worked across many industries, specializing in retail, consumer products, and travel and transportation.</p>
+      <p>My work sits at the intersection of user insight, analytics, and business strategy. I'm happiest translating messy, real-world problems into scalable digital experiences that measurably improve engagement, efficiency, and outcomes — partnering closely with engineering, UX, and business stakeholders along the way.</p>
+      <p>Based in Falls Church, Virginia. Currently exploring my next product leadership role.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Case studies</h2>
+      <p>A few initiatives where I owned the product end-to-end — from strategy and discovery through launch and measurable impact.</p>
+    </div>
+    <div class="cases">
+
+      <article class="case">
+        <div>
+          <span class="tag">Personalization</span>
+          <h3>Onsite Personalization Platform</h3>
+          <p class="client">Global Beauty Retailer · 2025–2026</p>
+        </div>
+        <div>
+          <ul>
+            <li>Owned the product roadmap and prioritization for personalization capabilities supporting millions of customer interactions across enterprise digital channels.</li>
+            <li>Led migration from AB Tasty and custom-built tooling to Adobe Target, stabilizing a fragmented multi-vendor ecosystem and enabling scalable experimentation and audience targeting.</li>
+            <li>Defined KPIs and success metrics to increase adoption and enable data-driven optimization of personalization experiences.</li>
+          </ul>
+          <div class="metrics">
+            <div class="metric"><div class="m-num">20–30%</div><div class="m-lbl">Faster time-to-launch</div></div>
+            <div class="metric"><div class="m-num">~80%</div><div class="m-lbl">Mobile-first traffic</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div>
+          <span class="tag">Platform Modernization</span>
+          <h3>Point-of-Service Transformation</h3>
+          <p class="client">Automotive Retailer · 2022–2024</p>
+        </div>
+        <div>
+          <ul>
+            <li>Owned product strategy, roadmap, and feature prioritization for a customer and vehicle management platform serving 1,000+ retail locations.</li>
+            <li>Redesigned end-to-end customer and operational workflows to reduce friction and increase execution consistency across retail operations.</li>
+            <li>Partnered with engineering, business, and operations stakeholders to deliver scalable platform enhancements aligned to customer and business needs.</li>
+          </ul>
+          <div class="metrics">
+            <div class="metric"><div class="m-num">30%+</div><div class="m-lbl">Employee efficiency gain</div></div>
+            <div class="metric"><div class="m-num">1,000+</div><div class="m-lbl">Locations supported</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div>
+          <span class="tag">UX Research · Strategy</span>
+          <h3>Boutique Experience Blueprint</h3>
+          <p class="client">Global Luxury Retailer · 2025</p>
+        </div>
+        <div>
+          <ul>
+            <li>Led in-depth user research with store associates to surface pain points, workflow inefficiencies, and unmet needs across key employee digital touchpoints.</li>
+            <li>Translated research insights into strategic experience recommendations to improve engagement, productivity, and alignment with the luxury brand identity.</li>
+            <li>Facilitated a cross-sectional workshop to define a Boutique Blueprint supporting long-term workforce experience strategy.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Career</p>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item parent">
+        <div class="date">Oct 2017 — Present</div>
+        <h3>Senior Managing Consultant, Digital Product Engineering</h3>
+        <div class="co">IBM · United States</div>
+        <p>Lead product strategy and roadmap development across 10+ digital transformation initiatives spanning retail, consumer products, travel &amp; transportation, and more — partnering with executive stakeholders to define product vision and translate business objectives into scalable digital solutions.</p>
+      </div>
+
+      <div class="tl-sublabel">Selected client engagements delivered through IBM</div>
+
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
+        <div class="date">Sep 2025 — Apr 2026</div>
+        <h3>Product Owner, Personalization &amp; Digital Experience</h3>
+        <div class="co">Global Beauty Retailer</div>
+        <p>Owned the personalization roadmap for millions of customer interactions; led the migration to Adobe Target and defined success metrics for engagement and adoption.</p>
+      </div>
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
+        <div class="date">Feb 2025 — Mar 2025</div>
+        <h3>UX Researcher / Product Strategy Consultant</h3>
+        <div class="co">Global Luxury Retailer</div>
+        <p>Ran stakeholder interviews and discovery workshops, synthesizing insights into future-state experience strategies presented to client leadership.</p>
+      </div>
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
+        <div class="date">Aug 2022 — Oct 2024</div>
+        <h3>Product Owner, Point-of-Service</h3>
+        <div class="co">Automotive Retailer</div>
+        <p>Owned strategy and roadmap for a customer and vehicle management platform across 1,000+ locations, improving employee efficiency by more than 30%.</p>
+      </div>
+      <div class="tl-item engagement">
+        <span class="client-badge">Client engagement</span>
+        <div class="date">2020 — 2021</div>
+        <h3>Business Analyst · Design Thinking Lead</h3>
+        <div class="co">Healthcare, Grocery Retail &amp; Technology clients</div>
+        <p>Delivered B2B portal transformation, customer loyalty go-lives, and facilitated 25+ client workshops defining global talent acquisition processes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Toolkit</p>
+      <h2>Skills &amp; tools</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3>Product Management</h3>
+        <div class="chips">
+          <span class="chip">Product Strategy</span>
+          <span class="chip">Product Discovery</span>
+          <span class="chip">Roadmap Prioritization</span>
+          <span class="chip">SAFe Agile (POPM)</span>
+          <span class="chip">Backlog Management</span>
+          <span class="chip">Release Planning</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Data &amp; Analytics</h3>
+        <div class="chips">
+          <span class="chip">KPI Development</span>
+          <span class="chip">Customer Insights</span>
+          <span class="chip">Experimentation</span>
+          <span class="chip">Hypothesis Validation</span>
+          <span class="chip">Data-Driven Decisions</span>
+          <span class="chip">Performance Measurement</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Platforms &amp; Tools</h3>
+        <div class="chips">
+          <span class="chip">Adobe Target</span>
+          <span class="chip">Jira</span>
+          <span class="chip">Confluence</span>
+          <span class="chip">Miro</span>
+          <span class="chip">Figma</span>
+          <span class="chip">AI Productivity Tools</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <div class="project-card">
+      <div>
+        <p class="eyebrow">Side project · In progress</p>
         <h3>CrikeNight</h3>
         <p>A dog-training app I'm building out of personal passion — designed to make everyday training more efficient and to sharpen performance at competitive trials. It's a hands-on 0-to-1 build, and I'm documenting the journey from first spark to working product as it takes shape.</p>
         <a href="project.html" class="btn btn-primary">View project →</a>
