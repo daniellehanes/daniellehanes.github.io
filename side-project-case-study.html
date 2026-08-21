@@ -4,6 +4,495 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Side Project — Product Case Study · Danielle Hanes</title>
+<meta name="description" content="A dog-sport training app I'm designing for myself, inspired by training and competing with my dog Mellie. Followed from 0 to 1 through design-thinking stages and artifacts." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --ink: #16181d;
+    --ink-soft: #4a4f5a;
+    --ink-faint: #868c98;
+    --line: #e6e8ec;
+    --accent: #1A4D5C;
+    --accent-soft: #e3eef1;
+    --amber: #9a6b12;
+    --amber-soft: #fdf3e3;
+    --radius: 16px;
+    --maxw: 1080px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .narrow { max-width: 760px; }
+  .eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  section { padding: 68px 0; }
+  .alt { background: var(--bg-alt); }
+
+  header.nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 62px; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a { font-size: 0.9rem; color: var(--ink-soft); font-weight: 500; }
+  .nav-links a:hover { color: var(--accent); }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* HERO */
+  .hero { padding: 72px 0 20px; }
+  .hero .kicker { display: inline-block; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 22px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(2.1rem, 4.6vw, 2.9rem); margin-bottom: 18px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lead { font-size: 1.08rem; color: var(--ink-soft); }
+  .hero .lead p { margin-bottom: 14px; }
+  .hero-cta { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .btn { font-size: 0.95rem; font-weight: 600; padding: 12px 22px; border-radius: 999px; display: inline-block; transition: all .2s; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #123842; transform: translateY(-1px); }
+  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+  /* Media placeholders */
+  .media-ph { border: 1.5px dashed #c8ccd3; border-radius: 14px; background: var(--bg-alt); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--ink-faint); padding: 22px; overflow: hidden; }
+  .media-ph svg { width: 30px; height: 30px; color: var(--accent); opacity: 0.7; margin-bottom: 10px; }
+  .media-ph .ph-t { font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); }
+  .media-ph .ph-s { font-size: 0.78rem; margin-top: 3px; }
+  .photo { position: relative; border-radius: 14px; overflow: hidden; background: var(--bg-alt); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo.featured { aspect-ratio: 4/5; }
+  .media-row .photo { aspect-ratio: 4/3; }
+  .photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 14px 10px; font-size: 0.78rem; color: #fff; background: linear-gradient(to top, rgba(0,0,0,0.62), transparent); }
+  .featured { aspect-ratio: 4/5; }
+  .media-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+  .media-row .media-ph { aspect-ratio: 4/3; }
+  @media (max-width: 640px) { .media-row { grid-template-columns: 1fr; } }
+
+  .glance { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 30px; }
+  .glance .box { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; background: var(--bg-alt); }
+  .glance .lbl { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .glance .val { font-size: 0.93rem; color: var(--ink); font-weight: 500; }
+  @media (max-width: 800px) { .glance { grid-template-columns: repeat(2, 1fr); } }
+
+  .sec-head { max-width: 660px; margin-bottom: 34px; }
+  .sec-head h2 { font-size: 2rem; margin-bottom: 12px; }
+  .sec-head p { color: var(--ink-soft); }
+  h2.plain { font-size: 2rem; margin-bottom: 18px; }
+
+  .prose p { color: var(--ink-soft); font-size: 1.06rem; margin-bottom: 16px; }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  .callout { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 22px 0; }
+  .callout p { color: var(--ink); font-size: 1.02rem; margin: 0; }
+
+  .principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 26px; }
+  .principle { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: #fff; }
+  .principle .num { font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--accent); }
+  .principle h4 { font-size: 1.08rem; margin: 6px 0 6px; }
+  .principle p { color: var(--ink-soft); font-size: 0.96rem; }
+  @media (max-width: 720px) { .principles { grid-template-columns: 1fr; } }
+
+  /* JOURNEY STAGES */
+  .process { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 34px; }
+  .process .step { font-size: 0.8rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; }
+
+  .journey { position: relative; padding-left: 30px; border-left: 2px solid var(--line); }
+  .stage { position: relative; padding: 0 0 46px 30px; }
+  .stage:last-child { padding-bottom: 0; }
+  .stage::before { content: ''; position: absolute; left: -41px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 3px solid var(--line); }
+  .stage.done::before { background: var(--accent); border-color: var(--accent); }
+  .stage.active::before { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .stage .stnum { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+  .stage h3 { font-size: 1.35rem; margin: 4px 0 6px; display: inline-block; }
+  .status { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 11px; border-radius: 999px; margin-left: 10px; vertical-align: middle; }
+  .status.s-done { background: var(--accent-soft); color: var(--accent); }
+  .status.s-active { background: var(--amber-soft); color: var(--amber); }
+  .status.s-next { background: #eef0f3; color: var(--ink-faint); }
+  .stage > p { color: var(--ink-soft); font-size: 1rem; margin-bottom: 10px; max-width: 66ch; }
+  .stage ul.doing { list-style: none; display: grid; gap: 7px; margin-top: 8px; }
+  .stage ul.doing li { position: relative; padding-left: 18px; color: var(--ink-soft); font-size: 0.96rem; }
+  .stage ul.doing li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+  /* artifacts inside a stage */
+  .artifact-block { margin-top: 20px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-alt); }
+  .artifact-lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+  .artifact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .artifact-grid.two { grid-template-columns: 1.5fr 1fr; }
+  .artifact-grid .media-ph { min-height: 130px; background: #fff; padding: 16px; }
+  .artifact-grid .media-ph svg { width: 24px; height: 24px; margin-bottom: 7px; }
+  .artifact-grid .media-ph .ph-t { font-size: 0.85rem; }
+  .artifact-grid .media-ph .ph-s { font-size: 0.72rem; }
+  .artifact-ph.tall { min-height: 200px; }
+  @media (max-width: 760px) { .artifact-grid, .artifact-grid.two { grid-template-columns: 1fr; } }
+
+  /* personas inside a stage */
+  .personas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .persona { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: #fff; display: flex; flex-direction: column; }
+  .persona.self { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+  .persona .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.05rem; margin-bottom: 10px; }
+  .persona.self .avatar { background: var(--accent); color: #fff; }
+  .persona .role { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
+  .persona h4 { font-size: 1.05rem; margin: 2px 0 8px; }
+  .persona .quote { font-style: italic; color: var(--ink); font-size: 0.88rem; border-left: 2px solid var(--accent-soft); padding-left: 10px; margin-bottom: 10px; }
+  .persona .meta { font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 8px; }
+  .persona .block-lbl { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); margin: 9px 0 5px; }
+  .persona ul { list-style: none; display: grid; gap: 5px; }
+  .persona ul li { position: relative; padding-left: 14px; color: var(--ink-soft); font-size: 0.85rem; }
+  .persona ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+  @media (max-width: 860px) { .personas { grid-template-columns: 1fr; } }
+
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer, footer a { font-size: 0.88rem; color: var(--ink-faint); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Danielle<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#story">My story</a>
+      <a href="#problem">Problem</a>
+      <a href="#journey">The 0 → 1 journey</a>
+      <a href="project.html">← Project overview</a>
+    </nav>
+  </div>
+</header>
+
+<section id="story" class="hero">
+  <div class="wrap">
+    <span class="kicker">Product Case Study · A tool I'm building for myself</span>
+    <div class="hero-grid">
+      <div>
+        <h1>This side project started with me, Mellie, and a notebook I never opened.</h1>
+        <div class="lead">
+          <p>Outside of my product work, I train and compete in dog sports with my dog, <strong>Mellie</strong>. Like most handlers, I ran our training on memory and gut feel — scribbled notes, mental checklists, and a vague sense of whether we were actually improving.</p>
+          <p>It's the app I wished existed: the one I'd genuinely use to plan our sessions, capture what happened, see our progress, and walk into a trial prepared. I'm my own first user — so I started by designing for the person I know best.</p>
+        </div>
+      </div>
+      <div>
+        <figure class="photo featured">
+          <img src="images/mellie-scentwork-trial.jpg" onerror="this.closest('figure').style.display='none'" alt="Danielle holding Mellie at an AKC scent work trial, in front of a board of place ribbons" />
+          <figcaption>Mellie and me after a scent work trial</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="media-row">
+      <figure class="photo">
+        <img src="images/mellie-on-the-trail.jpg" onerror="this.closest('figure').style.display='none'" alt="Mellie standing on a fallen log on a sunny trail" />
+        <figcaption>On the trail</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="images/mellie-rally-first-place.jpg" onerror="this.closest('figure').style.display='none'" alt="Danielle and Mellie with the judge and a first place ribbon at a rally trial" />
+        <figcaption>First place — rally trial</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="images/mellie-play.jpg" onerror="this.closest('figure').style.display='none'" alt="Close-up of Mellie grinning with a stick in her mouth" />
+        <figcaption>Off duty</figcaption>
+      </figure>
+    </div>
+
+    <div class="glance">
+      <div class="box"><div class="lbl">My role</div><div class="val">Handler, and product designer of my own tool</div></div>
+      <div class="box"><div class="lbl">Scope</div><div class="val">Multi-discipline dog sports</div></div>
+      <div class="box"><div class="lbl">Platform</div><div class="val">Mobile-first (iOS / Android)</div></div>
+      <div class="box"><div class="lbl">Stage</div><div class="val">Discovery → definition</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="alt">
+  <div class="wrap narrow prose">
+    <p class="eyebrow">The problem — from my own experience</p>
+    <h2 class="plain">Our training was constant. My visibility into it wasn't.</h2>
+    <p>Training Mellie for competition means months of short, frequent sessions across skills that build toward a title. But almost none of that work lived anywhere durable for me. It was in my head, in a notebook I rarely reopened, or in scattered notes. I couldn't easily <strong>see</strong> our progress, I couldn't <strong>diagnose</strong> plateaus, and the jump from our practice yard to the trial ring lost a lot in translation.</p>
+    <p>So I'd repeat what was comfortable instead of what we actually needed, discover gaps only on trial day, and struggle to tell whether a rough run was a training problem, a proofing problem, or just nerves. I kept thinking: <em>there should be a better way to do this — so I decided to design it.</em></p>
+    <div class="callout">
+      <p><strong>What I want to build:</strong> a low-friction, discipline-flexible app that lets a handler plan sessions, log reps in seconds, see patterns over time, and turn months of training into a confident trial-day routine — starting with the exact tool I'd use with Mellie.</p>
+    </div>
+    <p class="eyebrow" style="margin-top:34px;">Product principles</p>
+    <p>Five principles I'm using to keep the product honest as it takes shape:</p>
+    <div class="principles">
+      <div class="principle"><div class="num">01</div><h4>Log in seconds, not minutes</h4><p>Capture happens ring-side, one-handed, often with Mellie on leash. If logging isn't near-instant, it won't happen.</p></div>
+      <div class="principle"><div class="num">02</div><h4>Show progress, not just data</h4><p>I don't want a spreadsheet. I want to know what's improving, what's stuck, and what to work on next.</p></div>
+      <div class="principle"><div class="num">03</div><h4>Discipline-flexible by default</h4><p>Agility, obedience, rally, scent work — the core loop stays the same while the skill library adapts to the sport.</p></div>
+      <div class="principle"><div class="num">04</div><h4>Built for the training-to-trial arc</h4><p>The product's job isn't logging for its own sake — it's helping us perform when it counts.</p></div>
+      <div class="principle"><div class="num">05</div><h4>Reinforcement, not judgment</h4><p>Good training is positive. The tone celebrates consistency and effort rather than scolding missed days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Process</p>
+      <h2>The 0 → 1 journey</h2>
+      <p>I'm running a lightweight design-thinking process rather than jumping straight to features — and keeping the artifacts from each stage right where they belong. This is a living log; I'll update each stage as it moves forward.</p>
+    </div>
+
+    <div class="process">
+      <span class="step">Empathize</span>
+      <span class="step">Define</span>
+      <span class="step">Ideate</span>
+      <span class="step">Prototype</span>
+      <span class="step">Test</span>
+    </div>
+
+    <div class="journey">
+
+      <div class="stage done">
+        <div class="stnum">STAGE 00</div>
+        <h3>The spark</h3><span class="status s-done">Done</span>
+        <p>The founding insight: I lacked a single place to plan training, capture what actually happened, and carry that context into trials. I framed the core problem and who I was building for — starting with myself.</p>
+        <ul class="doing">
+          <li>Wrote a one-line problem statement and a "who is this for" sketch</li>
+          <li>Captured my own training pain points as the first source of truth</li>
+        </ul>
+      </div>
+
+      <div class="stage active">
+        <div class="stnum">STAGE 01</div>
+        <h3>Empathize &amp; discover</h3><span class="status s-active">In progress</span>
+        <p>Pressure-testing the problem before building anything. I empathy-mapped my own experience with Mellie first, then talked with other handlers and instructors to separate what would be nice from what's genuinely painful.</p>
+        <ul class="doing">
+          <li>Empathy mapping my own training-to-trial experience</li>
+          <li>Informal interviews with handlers across experience levels</li>
+          <li>Collecting the language people actually use, to shape the product's voice</li>
+        </ul>
+        <div class="artifact-block">
+          <div class="artifact-lbl">Artifacts from this stage</div>
+          <div class="artifact-grid">
+            <div class="media-ph artifact-ph tall">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v13H7l-3 3z"/></svg>
+              <div class="ph-t">Problem statement</div>
+              <div class="ph-s">One-liner framing the core problem</div>
+            </div>
+            <div class="media-ph artifact-ph tall">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20a7 7 0 0114 0"/></svg>
+              <div class="ph-t">Who is this for</div>
+              <div class="ph-s">Early sketch</div>
+            </div>
+            <div class="media-ph artifact-ph tall">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-9-8.5C1.5 9 3.5 6 6.5 6 8.5 6 10 7 12 9c2-2 3.5-3 5.5-3 3 0 5 3 3.5 6.5C19 16.65 12 21 12 21z"/></svg>
+              <div class="ph-t">Empathy map</div>
+              <div class="ph-s">Says · Thinks · Does · Feels</div>
+            </div>
+            <div class="media-ph artifact-ph tall">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+              <div class="ph-t">Interview notes</div>
+              <div class="ph-s">Handler conversations</div>
+            </div>
+            <div class="media-ph artifact-ph tall">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+              <div class="ph-t">Affinity map</div>
+              <div class="ph-s">Clustering what I heard</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 02</div>
+        <h3>Define</h3><span class="status s-next">Up next</span>
+        <p>Turning discovery into a sharp point of view: who I'm building for, the one job the first version must do well, and everything intentionally left out.</p>
+        <ul class="doing">
+          <li>Personas anchored in real handler needs</li>
+          <li>"How might we" statements to frame the opportunity</li>
+          <li>A tightly scoped v1 definition and success metrics</li>
+        </ul>
+
+        <div class="artifact-block">
+          <div class="artifact-lbl">Artifact · Personas</div>
+          <div class="personas">
+
+            <div class="persona self">
+              <div class="avatar">D</div>
+              <div class="role">Primary · Me</div>
+              <h4>The handler (me)</h4>
+              <p class="quote">"I want to peak for the trial with Mellie, not just show up to it."</p>
+              <p class="meta">Weekend competitor · trains Mellie across disciplines · time-pressed</p>
+              <div class="block-lbl">Goals</div>
+              <ul>
+                <li>See whether our training is moving the needle</li>
+                <li>Spend limited training time on the right things</li>
+                <li>Arrive at trials sharp and calm</li>
+              </ul>
+              <div class="block-lbl">Frustrations</div>
+              <ul>
+                <li>A notebook I never reopen</li>
+                <li>Can't tell a plateau from a bad week</li>
+                <li>Over-train strengths, neglect the gaps</li>
+              </ul>
+            </div>
+
+            <div class="persona">
+              <div class="avatar">I</div>
+              <div class="role">Adjacent · Newer handler</div>
+              <h4>Improving Ilana</h4>
+              <p class="quote">"I love this, but I don't always know what to do next."</p>
+              <p class="meta">Chasing first titles · 1 dog · needs structure</p>
+              <div class="block-lbl">Goals</div>
+              <ul>
+                <li>A clear, repeatable training routine</li>
+                <li>Confidence that she's progressing</li>
+                <li>Not to freeze up at her first trials</li>
+              </ul>
+              <div class="block-lbl">Frustrations</div>
+              <ul>
+                <li>Advice overload from every direction</li>
+                <li>No sense of what "on track" looks like</li>
+                <li>Forgets what the last session covered</li>
+              </ul>
+            </div>
+
+            <div class="persona">
+              <div class="avatar">M</div>
+              <div class="role">Adjacent · Instructor</div>
+              <h4>Coach Marisol</h4>
+              <p class="quote">"I only see my students once a week — I miss the other six days."</p>
+              <p class="meta">Trainer / instructor · follows many dogs</p>
+              <div class="block-lbl">Goals</div>
+              <ul>
+                <li>Continuity between lessons</li>
+                <li>Assign focus areas students actually follow</li>
+                <li>See what happened since last class</li>
+              </ul>
+              <div class="block-lbl">Frustrations</div>
+              <ul>
+                <li>Relies on students' fuzzy recall</li>
+                <li>No shared record of homework</li>
+                <li>Repeats guidance that didn't stick</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="artifact-block">
+          <div class="artifact-lbl">More artifacts from this stage</div>
+          <div class="artifact-grid two">
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9.5 9a2.5 2.5 0 115 .5c0 1.5-2 2-2 3.5"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="9"/></svg>
+              <div class="ph-t">How might we…</div>
+              <div class="ph-s">Opportunity framing</div>
+            </div>
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17c4 0 4-10 8-10s4 10 8 10"/><circle cx="3" cy="17" r="1.4"/><circle cx="19" cy="17" r="1.4"/></svg>
+              <div class="ph-t">Journey map</div>
+              <div class="ph-s">Training-to-trial arc</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 03</div>
+        <h3>Ideate &amp; prototype</h3><span class="status s-next">Up next</span>
+        <p>The smallest thing that delivers real value: plan a session, log reps, and see progress over time. Built to be used, not just demoed.</p>
+        <ul class="doing">
+          <li>Sketching the core flows: session planner, rep log, progress view</li>
+          <li>Clickable prototype, then a working build I can use daily</li>
+        </ul>
+        <div class="artifact-block">
+          <div class="artifact-lbl">Artifacts from this stage</div>
+          <div class="artifact-grid">
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l3-1 12-12-2-2L4 18z"/><path d="M15 5l4 4"/></svg>
+              <div class="ph-t">Sketches</div>
+              <div class="ph-s">Early concepts</div>
+            </div>
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M9.5 7h5M9.5 11h5M9.5 15h3"/></svg>
+              <div class="ph-t">Wireframes</div>
+              <div class="ph-s">Key screens</div>
+            </div>
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="6" height="4" rx="1"/><rect x="15" y="10" width="6" height="4" rx="1"/><rect x="3" y="16" width="6" height="4" rx="1"/><path d="M9 6h4v12H9"/></svg>
+              <div class="ph-t">User flows</div>
+              <div class="ph-s">Plan → log → review</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 04</div>
+        <h3>Test at trials</h3><span class="status s-next">Up next</span>
+        <p>The real exam: does using the app in the weeks before a trial change how prepared a handler feels — and how they perform on the day?</p>
+        <ul class="doing">
+          <li>Run the full loop on my own trial prep with Mellie</li>
+          <li>Put it in the hands of a few trusted handlers for honest feedback</li>
+        </ul>
+        <div class="artifact-block">
+          <div class="artifact-lbl">Artifacts from this stage</div>
+          <div class="artifact-grid two">
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18H6z"/><path d="M9 9l2 2 4-4"/><path d="M9 16h6"/></svg>
+              <div class="ph-t">Test plan</div>
+              <div class="ph-s">What I'm measuring</div>
+            </div>
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4z"/></svg>
+              <div class="ph-t">Feedback synthesis</div>
+              <div class="ph-s">What handlers told me</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stnum">STAGE 05</div>
+        <h3>Iterate &amp; grow</h3><span class="status s-next">Up next</span>
+        <p>Fold what I learn back into the product, sharpen the experience, and decide what earns a place on the roadmap next.</p>
+        <ul class="doing">
+          <li>Prioritize improvements by real usage, not assumptions</li>
+          <li>Shape a lightweight roadmap for the next set of bets</li>
+        </ul>
+        <div class="artifact-block">
+          <div class="artifact-lbl">Artifacts from this stage</div>
+          <div class="artifact-grid two">
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h9M4 12h14M4 17h7"/><circle cx="18" cy="7" r="1.6"/><circle cx="15" cy="17" r="1.6"/></svg>
+              <div class="ph-t">Roadmap</div>
+              <div class="ph-s">Now · Next · Later</div>
+            </div>
+            <div class="media-ph artifact-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+              <div class="ph-t">Success metrics</div>
+              <div class="ph-s">How I'll know it's working</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 Danielle Hanes · A personal side project</div>
+    <div><a href="project.html">Project overview</a> · <a href="index.html">Back to portfolio</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Side Project — Product Case Study · Danielle Hanes</title>
 <meta name="description" content="A dog-sport training app I'm designing for myself, inspired by training and competing with my dog Mellie. Problem framing, design-thinking research, and user personas." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
